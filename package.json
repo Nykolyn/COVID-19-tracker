@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
     "moment": "^2.25.3",
     "node-sass": "^4.14.0",
@@ -18,11 +19,14 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "homepage": "https://nykolyn.github.io/COVID-19-tracker",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

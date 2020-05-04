@@ -64,7 +64,9 @@ export default function App() {
       <Chart />
       <div className={classes.todos}>
         <h1>Todo:</h1>
+        <p>Setimeot for loader</p>
         <p>Move in the other place last modified</p>
+        <p>Animate screens</p>
       </div>
     </div>
   );

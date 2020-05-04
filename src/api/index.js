@@ -16,3 +16,8 @@ export const fetchData = async () => {
 
   return modifiedData;
 };
+
+export const fetchDailyData = async () => {
+  const { data } = await axios.get(`${url}/daily`);
+  return data;
+};

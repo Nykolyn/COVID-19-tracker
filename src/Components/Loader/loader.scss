@@ -78,21 +78,23 @@ $swipes-shadow-four: 0 14px 28px rgba(0, 0, 0, 0.25),
 $swipes-shadow-five: 0 19px 38px rgba(0, 0, 0, 0.3),
   0 15px 12px rgba(0, 0, 0, 0.22);
 
-html,
-body {
-  @include size(100%);
-  @include flex(center, center);
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #fafafa;
-  font-family: "Roboto";
-}
+// html,
+// body {
+//   @include size(100%);
+//   @include flex(center, center);
+//   min-height: 100vh;
+//   margin: 0;
+//   padding: 0;
+//   background-color: #fafafa;
+//   font-family: "Roboto";
+// }
 
 // Custome SCSS
 
 .sw-loader__wrapper {
   position: relative;
+  width: 100vw;
+  height: 100vh;
 
   &--center {
     position: absolute;
