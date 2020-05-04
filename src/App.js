@@ -10,6 +10,11 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
+  todos: {
+    position: "fixed",
+    top: "10px",
+    left: "10px",
+  },
 });
 
 export default function App() {
@@ -18,16 +23,15 @@ export default function App() {
     confirmed: {},
     recovered: {},
     deaths: {},
-    lastUpdate: {},
+    lastUpdate: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getData();
   }, []);
 
   const getData = () => {
-    setLoading(true);
     setTimeout(async () => {
       try {
         const fetchedData = await fetchData();
@@ -40,10 +44,10 @@ export default function App() {
         });
         setLoading(false);
       } catch (e) {
-        console.error("Error while getting data: ", e);
         setLoading(false);
+        console.error("Error while getting data: ", e);
       }
-    }, 1110);
+    }, 0);
   };
 
   if (loading) return <Loader />;
@@ -58,6 +62,10 @@ export default function App() {
       />
       <CountryPicker />
       <Chart />
+      <div className={classes.todos}>
+        <h1>Todo:</h1>
+        <p>Move in the other place last modified</p>
+      </div>
     </div>
   );
 }

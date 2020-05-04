@@ -1,7 +1,5 @@
 import React from "react";
 
-const CountryPicker = (props) => {
+export default function CountryPicker() {
   return <div>CountryPicker</div>;
-};
-
-export default CountryPicker;
+}
