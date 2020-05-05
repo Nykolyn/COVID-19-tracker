@@ -92,16 +92,6 @@ $swipes-shadow-five: 0 19px 38px rgba(0, 0, 0, 0.3),
 // Custome SCSS
 
 .sw-loader__wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-
-  &--center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
 
   .sw-loader__holder {
     @include size(70%, 70%);

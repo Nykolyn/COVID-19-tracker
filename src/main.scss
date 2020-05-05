@@ -6,4 +6,11 @@
 
 body {
   background-color: rgb(250, 250, 250);
+  padding: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
 }

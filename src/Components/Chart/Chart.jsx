@@ -7,11 +7,19 @@ import { Loader } from "..";
 
 const useStyles = makeStyles({
   container: {
-    margin: "50px 0",
+    display: "flex",
+    justifyContent: "center",
+    width: "60%",
   },
 });
 
-export default function Chart() {
+export default function Chart({
+  confirmed,
+  recovered,
+  deaths,
+  lastUpdate,
+  country,
+}) {
   const classes = useStyles();
   const [dailyData, setDailyData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -33,12 +41,35 @@ export default function Chart() {
           },
           {
             data: dailyData.map(({ deaths }) => deaths),
-            label: "Infected",
+            label: "Deaths",
             borderColor: "red",
             backgroundColor: "rgba(255,0,0,0.5)",
             fill: true,
           },
         ],
+      }}
+    />
+  );
+
+  const barChar = (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: [
+              "rgba(0,0, 255, 0.5)",
+              "rgba(0,255, 0, 0.5)",
+              "rgba(255,0, 0, 0.5)",
+            ],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in ${country}` },
       }}
     />
   );
@@ -55,5 +86,9 @@ export default function Chart() {
 
   if (loading) return <Loader />;
 
-  return <div className={classes.container}>{lineChart}</div>;
+  return (
+    <div className={classes.container}>
+      {country && country !== "global" ? barChar : lineChart}
+    </div>
+  );
 }

@@ -9,7 +9,7 @@ const MOMENT_FORMAT = "MMMM Do YYYY, HH:MM:SS";
 
 const useStyles = makeStyles({
   container: {
-    margin: "50px 0",
+    margin: "30px 0",
   },
   card: {
     margin: "0 2% !important",
@@ -29,7 +29,7 @@ export default function Cards({ confirmed, recovered, deaths, lastUpdate }) {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Grid container spacing={3} justify="center">
+      <Grid container spacing={20} justify="center">
         <Grid
           item
           xs={12}
